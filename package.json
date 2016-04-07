@@ -1,0 +1,17 @@
+{
+  "name": "integration-starter",
+  "version": "1.0.0",
+  "description": "Starter jQuery/BS/FA",
+  "author": "Pascal GAULT <pascal@inrage.fr>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3",
+    "gulp-file-include": "^0.13.7"
+  }
+}

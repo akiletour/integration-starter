@@ -1,0 +1,23 @@
+{
+  "name": "integration-starter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Pascal GAULT <pascal@inrage.fr>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
+    "font-awesome": "fontawesome#^4.5.0",
+    "jquery": "^2.2.2"
+  }
+}
