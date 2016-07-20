@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     bower = require('gulp-bower'),
     livereload = require('gulp-livereload'),
-    fileinclude = require('gulp-file-include');
+    nunjucksRender = require('gulp-nunjucks-render');
 
 var config = {
     sassPath: './resources/sass',
@@ -21,15 +21,12 @@ gulp.task('bower', function () {
     return bower().pipe(gulp.dest(config.bowerPath));
 });
 
-gulp.task('fileinclude', function () {
-    gulp.src(config.htmlPath + '/*.html')
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
-        .pipe(gulp.dest('./public'));
-
-    livereload.reload();
+gulp.task('template', function () {
+  return gulp.src(config.htmlPath + '/*.html')
+    .pipe(nunjucksRender({
+      path: [config.htmlPath] // String or Array
+    }))
+    .pipe(gulp.dest('./public'));
 });
 
 gulp.task('lib-js', function () {
@@ -81,7 +78,7 @@ gulp.task('watch', function () {
     livereload.listen();
     gulp.watch(config.sassPath + '/**/*.scss', ['css']);
     gulp.watch(config.jsPath + '/**/*.js', ['js']);
-    gulp.watch(config.htmlPath + '/**/*.html', ['fileinclude']);
+    gulp.watch(config.htmlPath + '/**/*.html', ['template']);
 });
 
-gulp.task('default', ['bower', 'icons', 'lib-js', 'js', 'css', 'fileinclude']);
+gulp.task('default', ['bower', 'icons', 'lib-js', 'js', 'css', 'template']);
