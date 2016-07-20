@@ -1,7 +1,9 @@
-@@include('partials/header.html')
+{% extends "layout/base.html" %}
 
-<div class="main-container">
-    Code goes here
-</div>
+{% block title %}Mon titre{% endblock %}
 
-@@include('partials/footer.html')
+{% block content %}
+  <div class="main-container">
+      Code goes here
+  </div>
+{% endblock %}
