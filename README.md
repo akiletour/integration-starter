@@ -17,9 +17,9 @@ A starter app for integration with gulp (bootstrap, jquery, font-awesome) and li
 
 **css**: App CSS
 
-**fileinclude**: App HTML (copy & combine all HTML files)
+**template**: App HTML (copy & combine all HTML files)
 
 **watch**: watch for changes for scss, js and html
 
 ## Docker
-Just copy docker-compose.yml.dist to **docker-composer..yml**
+Just copy docker-compose.yml.dist to **docker-composer.yml**
