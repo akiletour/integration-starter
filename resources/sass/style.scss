@@ -1,12 +1,17 @@
 // Custom fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
-// Rewrite variables
-$body-bg: #FFFFFF;
+@import "theme-variables";
 
-// Import bootstrap and fontawesome
+// Import bootstrap and fontawesome (from includePath Gulp)
 @import "bootstrap";
 @import "font-awesome";
 
 // import projects files
 @import "global";
+
+// Components
+@import "components/header";
+@import "components/footer";
+
+@import 'pages/homepage';

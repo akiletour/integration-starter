@@ -3,7 +3,10 @@ A starter app for integration with gulp (bootstrap, jquery, font-awesome) and li
 
 ##Installation of all dependencies
 
-```npm install```
+```
+$ npm install
+$ gulp
+```
 
 ## Gulp
 
@@ -17,7 +20,7 @@ A starter app for integration with gulp (bootstrap, jquery, font-awesome) and li
 
 **css**: App CSS
 
-**template**: App HTML (copy & combine all HTML files)
+**template**: App HTML (copy & combine all HTML files (gulp))
 
 **watch**: watch for changes for scss, js and html
 
