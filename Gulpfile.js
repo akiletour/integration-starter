@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     bower = require('gulp-bower'),
     livereload = require('gulp-livereload'),
-    nunjucksRender = require('gulp-nunjucks-render');
+    rename = require('gulp-rename'),
+    twig = require('gulp-twig');
 
 var config = {
     sassPath: './resources/sass',
@@ -14,7 +15,8 @@ var config = {
     htmlPath: './resources/html',
     cssPublicPath: './public/css',
     jsPublicPath: './public/js',
-    fontPublicPath: './public/fonts'
+    fontPublicPath: './public/fonts',
+    htmlPublicPath: './public'
 };
 
 gulp.task('bower', function () {
@@ -22,11 +24,12 @@ gulp.task('bower', function () {
 });
 
 gulp.task('template', function () {
-  return gulp.src(config.htmlPath + '/*.html')
-    .pipe(nunjucksRender({
-      path: [config.htmlPath] // String or Array
-    }))
-    .pipe(gulp.dest('./public'));
+    return gulp.src(config.htmlPath + '/*.html.twig')
+        .pipe(twig())
+        .pipe(rename(function (path) {
+            path.extname = ''
+        }))
+        .pipe(gulp.dest(config.htmlPublicPath));
 });
 
 gulp.task('lib-js', function () {
@@ -78,7 +81,7 @@ gulp.task('watch', function () {
     livereload.listen();
     gulp.watch(config.sassPath + '/**/*.scss', ['css']);
     gulp.watch(config.jsPath + '/**/*.js', ['js']);
-    gulp.watch(config.htmlPath + '/**/*.html', ['template']);
+    gulp.watch(config.htmlPath + '/**/*.html.twig', ['template']);
 });
 
 gulp.task('default', ['bower', 'icons', 'lib-js', 'js', 'css', 'template']);
