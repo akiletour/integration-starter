@@ -1,28 +1,18 @@
 # Integration Starter
-A starter app for integration with gulp (bootstrap, jquery, font-awesome) and livereload
+A starter app for integration with Webpack (Bootstrap, jQuery and Twig)
 
 ##Installation of all dependencies
 
 ```
-$ npm install
-$ gulp
+$ yarn
+$ yarn start
 ```
 
-## Gulp
-
-**bower**: Install jQuery, Bootstrap & font-awesome
-
-**icons**: Copy all fonts (bootstrap & font-awesome)
-
-**lib-js**: Copy all javascripts (jquery, bootstrap)
-
-**js**: App javascript
-
-**css**: App CSS
-
-**template**: App HTML (copy & combine all HTML files (gulp))
-
-**watch**: watch for changes for scss, js and html
+## Production
+For production, just type in console :
+```bash
+$ yarn build
+```
 
 ## Docker
 Just copy docker-compose.yml.dist to **docker-composer.yml**
